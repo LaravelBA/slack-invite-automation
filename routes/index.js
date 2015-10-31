@@ -26,12 +26,12 @@ router.post('/invite', function(req, res) {
         if (body.ok) {
           res.render('result', {
             community: config.community,
-            message: 'Success! Check "'+ req.body.email +'" for an invite from Slack.'
+            message: 'Listo! Revisá "'+ req.body.email +'" y activá tu invitación.'
           });
         } else {
           var error = body.error;
           if (error === 'already_invited') {
-            error = 'You are already invited.'
+            error = 'Ya estabas invitado.'
           } else if (error === 'invalid_email') {
             error = 'The email you entered is an invalid email.'
           }
